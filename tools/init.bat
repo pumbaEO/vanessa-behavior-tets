@@ -11,7 +11,7 @@ rem set RUNNER_DBPWD=234567890
 
 SET RUNNER_ENV=production
 
-IF %1=="" (
+IF "%~1"=="" (
 set mode="./lib/CF/83NoSync"
 ) else (
 set mode=%1

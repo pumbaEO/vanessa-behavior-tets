@@ -36,8 +36,7 @@
             ], 
             "showOutput": "always",
             "echoCommand": true, 
-            "suppressTaskName": true, 
-            ""
+            "suppressTaskName": true
 
         },
         {

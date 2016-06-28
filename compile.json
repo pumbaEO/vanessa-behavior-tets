@@ -4,8 +4,8 @@
             "connectionstring":"/F./build/ib", 
             "user":"", 
             "password":"", 
-            "inDir":"./examples/features/Simple", 
-            "outDir":"./build/simple"
+            "inDir":"./", 
+            "outDir":"./build/out/"
         }
 
     }

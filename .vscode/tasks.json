@@ -1,0 +1,58 @@
+{
+    "version": "0.1.0",
+    "command": "oscript",
+    "isShellCommand": true,
+    "showOutput": "silent",
+    "args": [
+        "-encoding=utf-8", 
+        "./tools/runner.os"
+    ],
+    "options": {
+        "env": {
+            "RUNNER_ENV":"production"
+        }
+    },
+
+    "tasks": [
+        {
+            "taskName": "build",
+            "isBuildCommand": true, 
+            "isWatching": true, 
+            "args": [
+                "watch", 
+                "compile.json"
+            ], 
+            "suppressTaskName": true
+
+        },
+        {
+            "taskName": "test1", 
+            "isTestCommand": true, 
+            "args": [
+                "vanessa", 
+                "--path ./build/out/vanessa-behavior.epf",
+                "--pathsettings ./tools/JSON/VBParams837UF.json" 
+
+            ], 
+            "showOutput": "always",
+            "echoCommand": true, 
+            "suppressTaskName": true, 
+            ""
+
+        },
+        {
+            "taskName": "compile",
+            "args": [
+                "./tools/runner.os",
+                "compileepf",
+                "./", 
+                "./build/out", 
+                "--ibname /F./build/ib"
+            ],
+            "echoCommand": true,
+            "showOutput": "always",
+            "suppressTaskName": true,
+            "isBuildCommand": false
+        }
+    ]
+}

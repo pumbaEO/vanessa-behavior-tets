@@ -1,13 +1,32 @@
 ﻿[
     {
-        "epf" : {
+        "srctoepf" : {
             "connectionstring":"/F./build/ib", 
             "user":"", 
             "password":"", 
-            "inDir":"./", 
-            "outDir":"./build/out/"
+            "inDir":"./examples/", 
+            "outDir":"./build/out/examples/"
         }
 
+    }, 
+    {
+        "srccftoib" : {
+            "connectionstring":"/F./build/ib", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./lib/CF/83NoSync/",
+            "autoupdate":"true"
+        }
+
+    }, 
+    {
+        "srctocfe": {
+            "connectionstring": "/F./build/ib", 
+            "user":"",
+            "password":"", 
+            "inDir":"./lib/cfe/testcfe",
+            "cfename": "test"
+        }
     }
     
 ]

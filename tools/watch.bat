@@ -11,5 +11,6 @@ rem set RUNNER_DBPWD=234567890
 SET RUNNER_ENV=production
 
 echo "watch"
-oscript %mypath%/runner.os watch compile.json
+rem oscript %mypath%/runner.os watch compile.json --filter srcexmaples
+oscript %mypath%/runner.os watch ./compile.json
 exit /B

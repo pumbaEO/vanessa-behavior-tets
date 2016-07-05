@@ -1,11 +1,52 @@
 ﻿[
     {
         "srctoepf" : {
-            "connectionstring":"/F./build/ib", 
+            "connectionstring":"/F./build/ibservice", 
             "user":"", 
             "password":"", 
             "inDir":"./examples/", 
-            "outDir":"./build/out/examples/"
+            "outDir":"./build/out/examples/",
+            "name":"srcexmaples",
+            "autoupdate":[
+                {"autoupdate":"epfsrcexmaples"}
+            ]
+
+        }
+
+    },
+    {
+        "epftosrc" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./build/out/examples/", 
+            "outDir":"./examples/",
+            "name":"epfsrcexmaples",
+            "autoupdate": "srcexmaples" 
+        }
+
+    },
+    {
+        "srctoepf" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./vanessa-behavior/", 
+            "outDir":"./build/out/",
+            "name":"srcvanessa",
+            "autoupdate": "epfsrcvanessa"
+        }
+
+    },
+    {
+        "epftosrc" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./build/out/vanessa-behavior.epf", 
+            "outDir":"./",
+            "name":"epfsrcvanessa",
+            "autoupdate": "srcvanessa" 
         }
 
     }, 

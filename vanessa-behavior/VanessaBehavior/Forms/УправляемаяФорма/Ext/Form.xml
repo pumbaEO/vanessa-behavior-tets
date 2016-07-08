@@ -877,26 +877,58 @@
 							</ToolTip>
 							<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="593"/>
 							<ChildItems>
-								<CheckBoxField name="ПроверкаРаботыVanessaBehaviorВРежимеTestClient" id="481">
-									<DataPath>Объект.ПроверкаРаботыVanessaBehaviorВРежимеTestClient</DataPath>
+								<UsualGroup name="ГруппаБазовыхНастроек" id="659">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Проверка работы Vanessa-Behavior в режиме test client</v8:content>
-										</v8:item>
-										<v8:item>
-											<v8:lang>en</v8:lang>
-											<v8:content>Check Vanessa-Behavior on 1C test client session</v8:content>
+											<v8:content>Группа базовых настроек</v8:content>
 										</v8:item>
 									</Title>
-									<TitleLocation>Right</TitleLocation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ПроверкаРаботыVanessaBehaviorВРежимеTestClientКонтекстноеМеню" id="482"/>
-									<ExtendedTooltip name="ПроверкаРаботыVanessaBehaviorВРежимеTestClientРасширеннаяПодсказка" id="594"/>
-									<Events>
-										<Event name="OnChange">ПроверкаРаботыVanessaBehaviorВРежимеTestClientПриИзменении</Event>
-									</Events>
-								</CheckBoxField>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа базовых настроек</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ChildrenAlign>None</ChildrenAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ThroughAlign>DontUse</ThroughAlign>
+									<ExtendedTooltip name="ГруппаБазовыхНастроекРасширеннаяПодсказка" id="660"/>
+									<ChildItems>
+										<CheckBoxField name="ПроверкаРаботыVanessaBehaviorВРежимеTestClient" id="481">
+											<DataPath>Объект.ПроверкаРаботыVanessaBehaviorВРежимеTestClient</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Проверка работы Vanessa-Behavior в режиме test client</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Check Vanessa-Behavior on 1C test client session</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПроверкаРаботыVanessaBehaviorВРежимеTestClientКонтекстноеМеню" id="482"/>
+											<ExtendedTooltip name="ПроверкаРаботыVanessaBehaviorВРежимеTestClientРасширеннаяПодсказка" id="594"/>
+											<Events>
+												<Event name="OnChange">ПроверкаРаботыVanessaBehaviorВРежимеTestClientПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<Button name="СохранитьНастройки" id="661">
+											<Type>UsualButton</Type>
+											<Representation>Picture</Representation>
+											<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+											<CommandName>Form.Command.СохранитьНастройки</CommandName>
+											<Picture>
+												<xr:Ref>StdPicture.Write</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ExtendedTooltip name="СохранитьНастройкиРасширеннаяПодсказка" id="662"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
 								<UsualGroup name="ГруппаОтчетыОЗапуске" id="144">
 									<Title>
 										<v8:item>
@@ -933,6 +965,7 @@
 										</CheckBoxField>
 										<UsualGroup name="Группа2" id="378">
 											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="597"/>
 											<ChildItems>
 												<CheckBoxField name="ДелатьОтчетВФорматеАллюр" id="138">
@@ -940,7 +973,7 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Формировать данные для отчета Allure</v8:content>
+															<v8:content>    данные для отчета Allure</v8:content>
 														</v8:item>
 														<v8:item>
 															<v8:lang>en</v8:lang>
@@ -976,6 +1009,7 @@
 										</UsualGroup>
 										<UsualGroup name="Группа5" id="505">
 											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="600"/>
 											<ChildItems>
 												<CheckBoxField name="ДелатьСкриншотПриВозникновенииОшибки" id="507">
@@ -983,7 +1017,7 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Формировать скриншот при ошибке</v8:content>
+															<v8:content>    скриншот при ошибке</v8:content>
 														</v8:item>
 														<v8:item>
 															<v8:lang>en</v8:lang>
@@ -1019,6 +1053,7 @@
 										</UsualGroup>
 										<UsualGroup name="Группа1" id="373">
 											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="603"/>
 											<ChildItems>
 												<CheckBoxField name="ДелатьОтчетВФорматеxUnit" id="367">
@@ -1026,7 +1061,7 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Формировать отчет в формате jUnit</v8:content>
+															<v8:content>    отчет в формате jUnit</v8:content>
 														</v8:item>
 														<v8:item>
 															<v8:lang>en</v8:lang>
@@ -1075,6 +1110,7 @@
 									<ChildItems>
 										<UsualGroup name="Группа6" id="513">
 											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="607"/>
 											<ChildItems>
 												<CheckBoxField name="СоздаватьИнструкциюHTML" id="135">
@@ -1098,7 +1134,7 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Каталог для формирования инструкций HTML</v8:content>
+															<v8:content>Каталог для инструкций HTML</v8:content>
 														</v8:item>
 														<v8:item>
 															<v8:lang>en</v8:lang>
@@ -1117,6 +1153,7 @@
 										</UsualGroup>
 										<UsualGroup name="Группа8" id="642">
 											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="643"/>
 											<ChildItems>
 												<CheckBoxField name="СоздаватьИнструкциюMarkdown" id="644">
@@ -1136,7 +1173,7 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Каталог для формирования инструкций Markdown</v8:content>
+															<v8:content>Каталог для инструкций Markdown</v8:content>
 														</v8:item>
 													</Title>
 													<ChoiceButton>true</ChoiceButton>
@@ -1151,6 +1188,7 @@
 										</UsualGroup>
 										<UsualGroup name="Группа7" id="515">
 											<Group>Horizontal</Group>
+											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="610"/>
 											<ChildItems>
 												<CheckBoxField name="СоздаватьИнструкциюВидео" id="517">
@@ -1171,6 +1209,12 @@
 												</CheckBoxField>
 												<InputField name="КаталогOutputИнструкцияВидео" id="520">
 													<DataPath>Объект.КаталогOutputИнструкцияВидео</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Каталог для инструкций видео</v8:content>
+														</v8:item>
+													</Title>
 													<ChoiceButton>true</ChoiceButton>
 													<ClearButton>true</ClearButton>
 													<ContextMenu name="КаталогOutputИнструкцияВидеоКонтекстноеМеню" id="521"/>
@@ -1183,6 +1227,7 @@
 										</UsualGroup>
 										<UsualGroup name="Группа3" id="503">
 											<Group>Vertical</Group>
+											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="613"/>
 											<ChildItems>
 												<InputField name="КомандаСделатьСкриншот" id="500">
@@ -1312,91 +1357,165 @@
 										</InputField>
 									</ChildItems>
 								</UsualGroup>
-								<CheckBoxField name="DebugLog2" id="289">
-									<DataPath>Объект.DebugLog</DataPath>
+								<UsualGroup name="ГруппаГоризонтальнаяДляФлажков" id="653">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Включить отладочные сообщения</v8:content>
-										</v8:item>
-										<v8:item>
-											<v8:lang>en</v8:lang>
-											<v8:content>Output verbose log and debug log</v8:content>
+											<v8:content>Группа горизонтальная для флажков</v8:content>
 										</v8:item>
 									</Title>
-									<TitleLocation>Right</TitleLocation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="DebugLog2КонтекстноеМеню" id="290"/>
-									<ExtendedTooltip name="DebugLog2РасширеннаяПодсказка" id="629"/>
-								</CheckBoxField>
-								<CheckBoxField name="ПодключитьВнешниеОбработкиДляОтладки" id="341">
-									<DataPath>Объект.ПодключитьВнешниеОбработкиДляОтладки</DataPath>
-									<Title>
+									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Подлючать обработки реализации шагов для отладки</v8:content>
+											<v8:content>Группа горизонтальная для флажков</v8:content>
 										</v8:item>
-										<v8:item>
-											<v8:lang>en</v8:lang>
-											<v8:content>Enable debug for steps defitions</v8:content>
-										</v8:item>
-									</Title>
-									<TitleLocation>Right</TitleLocation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ПодключитьВнешниеОбработкиДляОтладкиКонтекстноеМеню" id="342"/>
-									<ExtendedTooltip name="ПодключитьВнешниеОбработкиДляОтладкиРасширеннаяПодсказка" id="630"/>
-								</CheckBoxField>
-								<CheckBoxField name="ВыполнятьШагиАссинхронно" id="335">
-									<DataPath>Объект.ВыполнятьШагиАссинхронно</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Выполнять шаги асинхронно</v8:content>
-										</v8:item>
-										<v8:item>
-											<v8:lang>en</v8:lang>
-											<v8:content>Invoke steps as async procedure</v8:content>
-										</v8:item>
-									</Title>
-									<TitleLocation>Right</TitleLocation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ВыполнятьШагиАссинхронноКонтекстноеМеню" id="336"/>
-									<ExtendedTooltip name="ВыполнятьШагиАссинхронноРасширеннаяПодсказка" id="631"/>
-								</CheckBoxField>
-								<CheckBoxField name="ДелатьЛогВыполненияСценариевВЖР" id="338">
-									<DataPath>Объект.ДелатьЛогВыполненияСценариевВЖР</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Формировать журнал выполнения в журнал регистрации</v8:content>
-										</v8:item>
-										<v8:item>
-											<v8:lang>en</v8:lang>
-											<v8:content>Output log to 1C registration journal</v8:content>
-										</v8:item>
-									</Title>
-									<TitleLocation>Right</TitleLocation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ДелатьЛогВыполненияСценариевВЖРКонтекстноеМеню" id="339"/>
-									<ExtendedTooltip name="ДелатьЛогВыполненияСценариевВЖРРасширеннаяПодсказка" id="632"/>
-								</CheckBoxField>
-								<CheckBoxField name="СохранятьКонтекстыПередВыполнениемШагов" id="344">
-									<DataPath>Объект.СохранятьКонтекстыПередВыполнениемШагов</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Сохранять контексты перед выполнением шагов</v8:content>
-										</v8:item>
-										<v8:item>
-											<v8:lang>en</v8:lang>
-											<v8:content>Save contexts before step invoke</v8:content>
-										</v8:item>
-									</Title>
-									<TitleLocation>Right</TitleLocation>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="СохранятьКонтекстыПередВыполнениемШаговКонтекстноеМеню" id="345"/>
-									<ExtendedTooltip name="СохранятьКонтекстыПередВыполнениемШаговРасширеннаяПодсказка" id="633"/>
-								</CheckBoxField>
+									</ToolTip>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаГоризонтальнаяДляФлажковРасширеннаяПодсказка" id="654"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаДляФлажковЛевая" id="655">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа для флажков левая</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа для флажков левая</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаДляФлажковЛеваяРасширеннаяПодсказка" id="656"/>
+											<ChildItems>
+												<CheckBoxField name="DebugLog2" id="289">
+													<DataPath>Объект.DebugLog</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Включить отладочные сообщения</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Output verbose log and debug log</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="DebugLog2КонтекстноеМеню" id="290"/>
+													<ExtendedTooltip name="DebugLog2РасширеннаяПодсказка" id="629"/>
+												</CheckBoxField>
+												<CheckBoxField name="ПодключитьВнешниеОбработкиДляОтладки" id="341">
+													<DataPath>Объект.ПодключитьВнешниеОбработкиДляОтладки</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Подлючать обработки реализации шагов для отладки</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Enable debug for steps defitions</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ПодключитьВнешниеОбработкиДляОтладкиКонтекстноеМеню" id="342"/>
+													<ExtendedTooltip name="ПодключитьВнешниеОбработкиДляОтладкиРасширеннаяПодсказка" id="630"/>
+												</CheckBoxField>
+												<CheckBoxField name="СохранятьКонтекстыПередВыполнениемШагов" id="344">
+													<DataPath>Объект.СохранятьКонтекстыПередВыполнениемШагов</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Сохранять контексты перед выполнением шагов</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Save contexts before step invoke</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="СохранятьКонтекстыПередВыполнениемШаговКонтекстноеМеню" id="345"/>
+													<ExtendedTooltip name="СохранятьКонтекстыПередВыполнениемШаговРасширеннаяПодсказка" id="633"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаДляФлажковПравая" id="657">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа для флажков правая</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа для флажков правая</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаДляФлажковПраваяРасширеннаяПодсказка" id="658"/>
+											<ChildItems>
+												<CheckBoxField name="ДелатьЛогВыполненияСценариевВЖР" id="338">
+													<DataPath>Объект.ДелатьЛогВыполненияСценариевВЖР</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Формировать журнал выполнения в журнал регистрации</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Output log to 1C registration journal</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ДелатьЛогВыполненияСценариевВЖРКонтекстноеМеню" id="339"/>
+													<ExtendedTooltip name="ДелатьЛогВыполненияСценариевВЖРРасширеннаяПодсказка" id="632"/>
+												</CheckBoxField>
+												<CheckBoxField name="ВыполнятьШагиАссинхронно" id="335">
+													<DataPath>Объект.ВыполнятьШагиАссинхронно</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выполнять шаги асинхронно</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Invoke steps as async procedure</v8:content>
+														</v8:item>
+													</Title>
+													<TitleLocation>Right</TitleLocation>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ВыполнятьШагиАссинхронноКонтекстноеМеню" id="336"/>
+													<ExtendedTooltip name="ВыполнятьШагиАссинхронноРасширеннаяПодсказка" id="631"/>
+												</CheckBoxField>
+												<InputField name="ИнтервалВыполненияШагаЗаданныйПользователем" id="523">
+													<DataPath>Объект.ИнтервалВыполненияШагаЗаданныйПользователем</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Интервал выполнения шага</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Step invoke sleep interval</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ИнтервалВыполненияШагаЗаданныйПользователемКонтекстноеМеню" id="524"/>
+													<ExtendedTooltip name="ИнтервалВыполненияШагаЗаданныйПользователемРасширеннаяПодсказка" id="636"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
 								<InputField name="VanessaStackCommons" id="364">
 									<DataPath>Объект.VanessaStackCommons</DataPath>
 									<Title>
@@ -1437,20 +1556,15 @@
 										<Event name="StartChoice">КаталогИнструментовНачалоВыбора</Event>
 									</Events>
 								</InputField>
-								<InputField name="ИнтервалВыполненияШагаЗаданныйПользователем" id="523">
-									<DataPath>Объект.ИнтервалВыполненияШагаЗаданныйПользователем</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Интервал выполнения шага</v8:content>
-										</v8:item>
-										<v8:item>
-											<v8:lang>en</v8:lang>
-											<v8:content>Step invoke sleep interval</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="ИнтервалВыполненияШагаЗаданныйПользователемКонтекстноеМеню" id="524"/>
-									<ExtendedTooltip name="ИнтервалВыполненияШагаЗаданныйПользователемРасширеннаяПодсказка" id="636"/>
+								<InputField name="КаталогПроекта" id="650">
+									<DataPath>Объект.КаталогПроекта</DataPath>
+									<ChoiceButton>true</ChoiceButton>
+									<ClearButton>true</ClearButton>
+									<ContextMenu name="КаталогПроектаКонтекстноеМеню" id="651"/>
+									<ExtendedTooltip name="КаталогПроектаРасширеннаяПодсказка" id="652"/>
+									<Events>
+										<Event name="StartChoice">КаталогПроектаНачалоВыбора</Event>
+									</Events>
 								</InputField>
 							</ChildItems>
 						</Page>
@@ -2586,6 +2700,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>СвернутьДеревоДоСценариев</Action>
+		</Command>
+		<Command name="СохранитьНастройки" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьНастройки1</Action>
 		</Command>
 	</Commands>
 </Form>

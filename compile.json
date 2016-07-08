@@ -4,11 +4,11 @@
             "connectionstring":"/F./build/ibservice", 
             "user":"", 
             "password":"", 
-            "inDir":"./examples/", 
-            "outDir":"./build/out/examples/",
-            "name":"srcexmaples",
+            "inDir":"./features/", 
+            "outDir":"./build/out/features/",
+            "name":"srcfeatures",
             "autoupdate":[
-                {"autoupdate":"epfsrcexmaples"}
+                {"autoupdate":"epfsrcfeatures"}
             ]
 
         }
@@ -19,10 +19,10 @@
             "connectionstring":"/F./build/ibservice", 
             "user":"", 
             "password":"", 
-            "inDir":"./build/out/examples/", 
-            "outDir":"./examples/",
-            "name":"epfsrcexmaples",
-            "autoupdate": "srcexmaples" 
+            "inDir":"./build/out/features/", 
+            "outDir":"./features/",
+            "name":"epfsrcfeatures",
+            "autoupdate": "srcfeatures" 
         }
 
     },
@@ -59,15 +59,30 @@
             "autoupdate":"true"
         }
 
-    }, 
+    },
     {
-        "srctocfe": {
-            "connectionstring": "/F./build/ib", 
-            "user":"",
+        "srctoepf" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
             "password":"", 
-            "inDir":"./lib/cfe/testcfe",
-            "cfename": "test"
+            "inDir":"./vbFeatureReader/", 
+            "outDir":"./build/out/",
+            "name":"srcfeaturereader",
+            "autoupdate": "epfsrcvbFeatureReader"
         }
+
+    },
+    {
+        "epftosrc" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./build/out/vbFeatureReader.epf", 
+            "outDir":"./",
+            "name":"epfsrcvbFeatureReader",
+            "autoupdate": "srcfeaturereader" 
+        }
+
     }
     
 ]

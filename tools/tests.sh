@@ -16,6 +16,7 @@ connstring="--ibname /F${real_path}/../build/ib"
 USERPWD=
 #connstring=--ibname /F"~/projects/onec/itil"
 #USERPWD=--db-user base --db-pwd 234567890
-#export RUNNER_ENV=production
+export RUNNER_ENV=production
+export VANESSA_commandscreenshot="import -window root " 
 
-oscript $real_path/runner.os vanessa --path "$real_path/../build/vanessa-behavior.epf" --pathsettings "$mode" $connstring $USERPWD
+oscript $real_path/runner.os vanessa --path "$real_path/../build/out/vanessa-behavior.epf" --pathsettings "$mode" $connstring $USERPWD

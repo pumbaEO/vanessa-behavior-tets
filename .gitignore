@@ -1,3 +1,4 @@
 crowdin.yaml
 .vscode
 build/*
+log.txt

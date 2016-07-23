@@ -44,5 +44,8 @@ node("slave") {
         testsettings = env.PATHSETTINGS;
     }
     command = """oscript tools/runner.os vanessa ${v8version} --ibname /F"./build/ib" --path ./build/out/vanessa-behavior.epf --pathsettings ./tools/JSON/${testsettings} """
-    if (isUnix()){ sh "${command}" } else {bat "${command}"}
+    if (isUnix()){
+        env.VANESSA_commandscreenshot="import -window root "
+        sh "${command}" 
+    } else {bat "${command}"}
 }

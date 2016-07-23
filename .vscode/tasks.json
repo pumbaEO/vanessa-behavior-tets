@@ -42,11 +42,11 @@
         {
             "taskName": "compile",
             "args": [
-                "./tools/runner.os",
                 "compileepf",
-                "./", 
-                "./build/out", 
-                "--ibname /F./build/ib"
+                "./epf", 
+                "./build/out/epf", 
+                "--db-user base", 
+                "--db-pwd 234567890"
             ],
             "echoCommand": true,
             "showOutput": "always",

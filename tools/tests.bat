@@ -4,8 +4,6 @@ SETLOCAL
 
 set BUILDPATH=.\build
 
-if not exist %BUILDPATH% set BUILDPATH=..\build
-
 set RUNNER_IBNAME=/F"%BUILDPATH%/ib"
 rem set RUNNER_DBUSER=base
 rem set RUNNER_DBPWD=234567890
@@ -13,7 +11,7 @@ rem set RUNNER_DBPWD=234567890
 SET RUNNER_ENV=production
 
 IF "%~1"=="" (
-    set mode="../tools/JSON/VBParams837UF.json"
+    set mode="./tools/JSON/VBParams837UF.json"
 ) else (
     set mode=%1
 )

@@ -1,7 +1,8 @@
 #!groovy
 node("slave") {
     stage "checkout"
-
+    //git url: 'https://github.com/pumbaEO/vanessa-behavior-tets.git'
+    checkout scm
     if (env.DISPLAY) {
         println env.DISPLAY;
     } else {
@@ -9,12 +10,8 @@ node("slave") {
     }
     env.RUNNER_ENV="production";
 
-    checkout scm
     if (isUnix()) {sh 'git submodule update --init'} else {bat "git submodule update --init"}
     stage "init base"
-
-    //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, recursiveSubmodules: true, reference: '', trackingSubmodules: true]], submoduleCfg: [], userRemoteConfigs: [[url: 'http://git.http.service.consul/shenja/vanessa-behavior.git']]])
-    echo "${env.WORKSPACE}"
 
     def srcpath = "./lib/CF/83NoSync";
     if (env.SRCPATH){
@@ -29,14 +26,14 @@ node("slave") {
         if (isUnix()){
             sh "${command}"
         } else {
-            bat "${command}"
+            bat "chcp 1251\n${command}"
         }
     }
 
     stage "build"
     echo "build catalogs"
     command = """oscript tools/runner.os compileepf ${v8version} --ibname /F"./build/ib" ./ ./build/out/ """
-    if (isUnix()) {sh "${command}"} else {bat "${command}"}       
+    if (isUnix()) {sh "${command}"} else {bat "chcp 1251\n${command}"}       
     
     stage "test"
     def testsettings = "VBParams837UF.json";
@@ -45,7 +42,18 @@ node("slave") {
     }
     command = """oscript tools/runner.os vanessa ${v8version} --ibname /F"./build/ib" --path ./build/out/vanessa-behavior.epf --pathsettings ./tools/JSON/${testsettings} """
     if (isUnix()){
-        env.VANESSA_commandscreenshot="import -window root "
-        sh "${command}" 
-    } else {bat "${command}"}
+        sh "${command}"
+        
+    } else {
+        env.VANESSA_commandscreenshot='nircmd.exe savescreenshot '
+        bat "chcp 1251\n${command}"
+    }
+    
+    command = """allure generate ./build/out/allurereport -o ./build/htmlpublish"""
+    if (isUnix()){ sh "${command}" } else {bat "chcp 1251\n${command}"}
+    step([$class: 'ArtifactArchiver', artifacts: '**/build/out/*.epf', fingerprint: true])
+    step([$class: 'ArtifactArchiver', artifacts: '**/build/out/features/Libraries/**/*.epf', fingerprint: true])
+    step([$class: 'ArtifactArchiver', artifacts: '**/build/out/features/Libraries/**/*.feature', fingerprint: true])
+    
+    publishHTML(target:[allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './build/htmlpublish', reportFiles: 'index.html', reportName: 'Allure report'])
 }

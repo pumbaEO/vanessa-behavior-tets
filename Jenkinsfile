@@ -41,19 +41,32 @@ node("slave") {
         testsettings = env.PATHSETTINGS;
     }
     command = """oscript tools/runner.os vanessa ${v8version} --ibname /F"./build/ib" --path ./build/out/vanessa-behavior.epf --pathsettings ./tools/JSON/${testsettings} """
-    if (isUnix()){
-        sh "${command}"
-        
-    } else {
-        env.VANESSA_commandscreenshot='nircmd.exe savescreenshot '
-        bat "chcp 1251\n${command}"
+    def errors = []
+    try{
+        if (isUnix()){
+            sh "${command}"
+            
+        } else {
+            env.VANESSA_commandscreenshot='nircmd.exe savescreenshot '
+            bat "chcp 1251\n${command}"
+        }
+    } catch (e) {
+         errors << "BDD status : ${e}"
     }
-    
+
     command = """allure generate ./build/out/allurereport -o ./build/htmlpublish"""
     if (isUnix()){ sh "${command}" } else {bat "chcp 1251\n${command}"}
-    step([$class: 'ArtifactArchiver', artifacts: '**/build/out/*.epf', fingerprint: true])
-    step([$class: 'ArtifactArchiver', artifacts: '**/build/out/features/Libraries/**/*.epf', fingerprint: true])
-    step([$class: 'ArtifactArchiver', artifacts: '**/build/out/features/Libraries/**/*.feature', fingerprint: true])
-    
     publishHTML(target:[allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './build/htmlpublish', reportFiles: 'index.html', reportName: 'Allure report'])
+
+    if (errors.size() > 0) {
+        currentBuild.result = 'UNSTABLE'
+        for (int i = 0; i < errors.size(); i++) {
+            echo errors[i]; 
+        }
+    } else {
+        step([$class: 'ArtifactArchiver', artifacts: '**/build/out/*.epf', fingerprint: true])
+        step([$class: 'ArtifactArchiver', artifacts: '**/build/out/features/Libraries/**/*.epf', fingerprint: true])
+        step([$class: 'ArtifactArchiver', artifacts: '**/build/out/features/Libraries/**/*.feature', fingerprint: true])    
+    }
+
 }
